@@ -1,1 +1,39 @@
 dashboard.css
+
+body{
+
+}
+
+div{
+    border-radius: 25px;
+    border: 2px solid black;
+    font-size: 25px;
+}
+
+.info{
+    padding: 30px;
+    width: 37.5%;
+    height: 20%;
+}
+
+.feed{
+    padding: 30px;
+    width: 50%;
+    height: 20%;
+}
+
+.tasks{
+    padding: 30px;
+    width: 37.5%;
+    height: 20%;
+}
+
+.deptInfo{
+    padding: 30px;
+    width: 50%;
+    height: 20%;
+}
+
+.dptLst{
+    list-style-type: none;
+}
