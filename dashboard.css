@@ -1,39 +1,71 @@
 dashboard.css
 
 body{
+    background-color: #fff9c2;
+}
 
+nav{
+    margin-top: -2%;
 }
 
 div{
-    border-radius: 25px;
-    border: 2px solid black;
     font-size: 25px;
+    margin-left: 7.3%;
+    margin-top: 1.5%;
+}
+
+div:hover {
+    text-decoration: none;
+    transform: scale(1.025);
+    transition: 0.5s;
+}
+
+.row1{
+    margin-top: 6.5%;
 }
 
 .info{
+    border-radius: 25px;
+    border: 2px solid black;
     padding: 30px;
     width: 37.5%;
     height: 20%;
+
 }
 
 .feed{
+    border-radius: 25px;
+    border: 2px solid black;
     padding: 30px;
     width: 50%;
-    height: 20%;
+    height: 475px;
+    margin-top: -10%;
 }
 
 .tasks{
+    border-radius: 25px;
+    border: 2px solid black;
     padding: 30px;
     width: 37.5%;
-    height: 20%;
+    height: 400px;
+    margin-left: 1%;
 }
 
 .deptInfo{
+    border-radius: 25px;
+    border: 2px solid black;
     padding: 30px;
     width: 50%;
     height: 20%;
+    margin-top: -0.2%;
+    margin-left: 1%;
 }
 
 .dptLst{
     list-style-type: none;
+}
+
+h3{
+    text-align: center;
+    text-underline: black;
 }
