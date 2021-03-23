@@ -1,1 +1,62 @@
-timetable.css
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #93B7BE
+}
+
+
+#header {
+  background-color: #F1FFFA;
+}
+
+h1 {
+  text-align: center;
+  color: #454545;
+  font-family: "Lucida Console", "Courier New", monospace;
+  padding: 6pt;
+  border-left-style: solid;
+  border-width: 20pt;
+}
+
+#table  {
+  align-items: center;
+  margin-top: 80pt;
+}
+
+table{
+  border-style: solid;
+  text-align: center;
+  align: center;
+  margin-bottom: 0pt;
+  margin-top: 0pt;
+  margin-right: auto;
+  margin-left: auto;
+  border-collapse: collapse;
+  font-family: monospace;
+  font-size: 12pt;
+  border-color: #EBF5EE
+}
+
+#lunch{
+  background-color: #F9F4F5
+}
+
+td {
+  border-style: solid;
+  border-width: 1pt;
+  background-color: #D5C7BC
+}
+
+th{
+  border-style: solid;
+  padding-left: 15pt;
+  padding-right: 15pt;
+  border-width: 1pt;
+  font-family: monospace;
+  font-size: 15pt;
+  background-color: #93B7BE
+}
+#day{
+  background-color: #F1FFFA
+}

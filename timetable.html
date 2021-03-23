@@ -1,19 +1,17 @@
 <HTML>
   <head>
-    <style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-</style>
+    <link rel="stylesheet" href="timetable.css">
     <title> Timetable </title>
   </head>
   <body>
-    <h1> Timetable </h1>
-    <table style=border: 1px solid black;>
+  <div id = "header">
+    <h1> Your Timetable </h1>
+  </div>
+  <div id = "table">
+    <table>
       <tr>
-        <th rowspan="2"> Time </th>
-        <th colspan="7"> Day </th>
+        <th id = "day" rowspan="2"> Time </th>
+        <th id = "day" colspan="7"> Day </th>
       </tr>
       <tr>
           <th>Monday</th>
@@ -30,7 +28,7 @@ table, th, td {
 
       <tr>
         <td> 09:00</td>
-        <td> </td>
+        <td> meeting with the big bois???</td>
         <td> </td>
         <td> </td>
         <td> </td>
@@ -60,7 +58,7 @@ table, th, td {
       </tr>
       <tr>
         <td> 12:00 </td>
-        <td colspan = 7>LUNCH</td>
+        <td id = "lunch" colspan = 7>LUNCH</td>
       </tr>
       <tr>
         <td> 13:00 </td>
@@ -123,6 +121,7 @@ table, th, td {
         <td> </td>
       </tr>
     </table>
+  </div>
   </body>
 
 </HTML>
