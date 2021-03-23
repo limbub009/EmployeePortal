@@ -3,59 +3,100 @@ DASHBOARD
     <head>
         <title>DASHBOARD</title>
         <link rel="stylesheet" type="text/css" href="dashboard.css" >
+<!--        Bootstrap-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
     <body>
-<!--        <nav>-->
-<!--            -->
-<!--        </nav>-->
-        <div class="info">
-            <h3>Information</h3>
-            <ul>
-                <li>
-                    Username:
-                </li>
-                <li>
-                    Email:
-                </li>
-            </ul>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Employee Portal</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <!-- ADD PHP TO MAKE IT VISIBLE ONLY WHEN USER IS LOGGED IN-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Your Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">View Schedule</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Search Employee</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                          <a class="nav-link" href="#">About Us</a>
+                        </li> -->
+                        <!-- <li class="nav-item">
+                          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li> -->
+                    </ul>
+                    <form class="d-flex">
+                        <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+                        <button class="btn btn-outline-success" type="submit" style="margin-right: 7%;">LogIn</button>
+                        <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
+                        <button class="btn btn-outline-success" type="submit">SignIn</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class = "row row1">
+            <div class="col-sm-6 info">
+                <h3>Information</h3>
+                <ul>
+                    <li>
+                        Username:
+                    </li>
+                    <li>
+                        Email:
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4 tasks">
+                <h3>Tasks</h3>
+                <ul>
+                    <li>
+                        hkasklsa
+                    </li>
+                    <li>
+                        nas;jvs;a
+                    </li>
+                    <li>
+                        ck as;vsa
+                    </li>
+                    <li>
+                        lkjsv ;as
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="feed">
-            <h3>Feed</h3>
-            <p>lorem ipsum</p>
-        </div>
-        <div class="tasks">
-            <h3>Tasks</h3>
-            <ul>
-                <li>
-                    hkasklsa
-                </li>
-                <li>
-                    nas;jvs;a
-                </li>
-                <li>
-                    ck as;vsa
-                </li>
-                <li>
-                    lkjsv ;as
-                </li>
-            </ul>
-        </div>
-        <div class="deptInfo">
-            <h3>Department Information</h3>
-            <ul class="dptLst">
-                <li>
-                    Department Information:
-                </li>
-                <li>
-                    Department Name:
-                </li>
-                <li>
-                    Department ID:
-                </li>
-                <li>
-                    Department Manager:
-                </li>
-            </ul>
+        <div class = "row 2">
+            <div class="col-sm-6 feed">
+                <h3>Feed</h3>
+                <p>lorem ipsum</p>
+            </div>
+            <div class="col-sm-4 deptInfo">
+                <h3>Department Information</h3>
+                <ul class="dptLst">
+                    <li>
+                        Department Information:
+                    </li>
+                    <li>
+                        Department Name:
+                    </li>
+                    <li>
+                        Department ID:
+                    </li>
+                    <li>
+                        Department Manager:
+                    </li>
+                </ul>
+            </div>
         </div>
     </body>
 </html>
