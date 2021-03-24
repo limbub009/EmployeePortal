@@ -1,11 +1,22 @@
-dashboard.css
-
 body{
-    background-color: #fff9c2;
+  background: url(./images/background1.jpg);
 }
+
 
 nav{
     margin-top: -2%;
+}
+
+ul{
+    list-style-type: none;
+}
+#linksnav ul{
+  padding-bottom: 1em;
+}
+
+.d-flex{
+  position: absolute;
+  right: 2em;
 }
 
 div{
@@ -14,10 +25,19 @@ div{
     margin-top: 1.5%;
 }
 
-div:hover {
+.dashboardbox:hover {
     text-decoration: none;
     transform: scale(1.025);
     transition: 0.5s;
+}
+
+.dashboardbox{
+  background-color: white;
+}
+
+.dashboardbox h3{
+    border-bottom: solid 1px;
+    border-bottom-color: lightgrey;
 }
 
 .row1{
@@ -25,8 +45,6 @@ div:hover {
 }
 
 .info{
-    border-radius: 25px;
-    border: 2px solid black;
     padding: 30px;
     width: 37.5%;
     height: 20%;
@@ -34,8 +52,6 @@ div:hover {
 }
 
 .feed{
-    border-radius: 25px;
-    border: 2px solid black;
     padding: 30px;
     width: 50%;
     height: 475px;
@@ -43,8 +59,6 @@ div:hover {
 }
 
 .tasks{
-    border-radius: 25px;
-    border: 2px solid black;
     padding: 30px;
     width: 37.5%;
     height: 400px;
@@ -52,8 +66,6 @@ div:hover {
 }
 
 .deptInfo{
-    border-radius: 25px;
-    border: 2px solid black;
     padding: 30px;
     width: 50%;
     height: 20%;
@@ -68,4 +80,10 @@ div:hover {
 h3{
     text-align: center;
     text-underline: black;
+}
+
+
+#profilelayout{
+  display: flex;
+  flex-direction: row;
 }
