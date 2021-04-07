@@ -1,4 +1,37 @@
+<?php
+session_start();
 
+#ADD CHECK LOGIN!!
+
+  include("connections.php");
+  include("functions.php");
+
+
+  $user_data = check_login($con);
+
+  #CHECK IF USER CLICKED 'POST' SUBMIT BUTTON
+  if($_SERVER['REQUEST_METHOD'] == "POST"){
+    #something was POSTed
+    #collect userdata from post variable
+    $title = $_POST['title'];
+    $body = $_POST['body'];
+    $userid = $_SESSION['user_id'];  #sets userid of the post to the session id, which is set to the user's id when they log in, to identify the owner of the post
+
+    if(!empty($title) && !empty($body))
+    {
+      #save to database
+      $query = "insert into feedpost (userid, title, body) values ('$userid', '$title', '$body')";  #timestamp automatically added by the db?
+
+      mysqli_query($con, $query);
+
+      #header("Location: login.php");
+    }
+    else{
+      echo "Please fill in all the fields";
+    }
+  }
+
+?>
 <html>
 <head>
   <title>DASHBOARD</title>
@@ -85,6 +118,18 @@
             <div class="col-sm-6 feed dashboardbox">
                 <h3>Feed</h3>
                 <p>lorem ipsum</p>
+                  <button onclick="toggleHide('postfeedform')">Add Post</button>
+                  <div id="postfeedform">
+                    <form method="POST" action="#">
+                        <p>Title</p>
+                        <input type="text" STYLE="color: black" name="title" placeholder="Title">
+
+                        <p>Body</p>
+                        <input type="text" STYLE="color: black" name="body" placeholder="Body">
+                        <br>
+                        <input type="submit" name="" value="Post">
+                    </form>
+                </div>
             </div>
             <div class="col-sm-4 deptInfo dashboardbox">
                 <h3>Department Information</h3>
