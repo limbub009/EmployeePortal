@@ -32,19 +32,16 @@
 
 if($sql2)
        {
-           /*Successful*/
-           /*header('location:dashboard.php');
+              /*ERROR*/
        }
        else
        {
-           /*sorry your profile is not update*/
-           /*header('location:editprofile.php');*/
+              /*ERROR*/
        }
     }
     else
     {
-        /*sorry your id is not match*/
-        /*header('location:editprofile.php');*/
+        /*ERROR*/
     }
  }
 ?>
