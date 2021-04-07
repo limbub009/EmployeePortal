@@ -1,8 +1,9 @@
 <!doctype html>
 
 <?php
-session_start();
-require("view.php");
+  session_start();
+  include("connections.php");
+  include("functions.php");
 ?>
 
 
@@ -17,8 +18,7 @@ require("view.php");
   <body>
     <div class="page-content page-container" id="page-content">
         <?php
-        if(!isset($_SESSION['username'])){
-        }
+        if(!isset($_SESSION['searchName'])){
         ?>
         <div class="padding">
             <div class="row container d-flex justify-content-center">
@@ -28,11 +28,11 @@ require("view.php");
                             <div class="col-sm-4 bg-c-lite-green user-profile">
                                 <div class="card-block text-center text-white">
                                     <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
-                                <?php if(isset($_SESSION['username'])){
-                                    $userData = getUserData(getID($_SESSION))
+                                <?php if(isset($_SESSION['searchName'])){
+                                    $userData = getUserData(getID($_SESSION['searchName']))
                                     ?>
-                                    <h6 class="f-w-600">name</h6>
-                                    <?php echo $userData['name'];?>
+                                    <h6 class="f-w-600"><?php echo $userData['name']; ?></h6>
+
                                 </div>
                             </div>
                             <div class="col-sm-8">
@@ -40,20 +40,20 @@ require("view.php");
                                     <div class="row topCard">
                                         <div class="col-sm-6">
                                             <p class="m-b-10 f-w-600">Email</p>
-                                            <h6 class="text-muted f-w-400">rntng@gmail.com</h6>
-                                            <?php echo $userData['email'];?>
+                                            <h6 class="text-muted f-w-400"><?php echo $userData['email']; ?></h6>
+
                                         </div>
                                         <div class="col-sm-6">
                                             <p class="m-b-10 f-w-600">Phone</p>
-                                            <h6 class="text-muted f-w-400">98979989898</h6>
-                                            <?php echo $userData['number'];?>
+                                            <h6 class="text-muted f-w-400"><?php echo $userData['number'];?></h6>
+
                                         </div>
                                     </div>
                                     <div class="row bottomCard">
                                         <div class="col-sm-6">
                                             <p class="m-b-10 f-w-600">Department</p>
-                                            <h6 class="text-muted f-w-400">Sam Disuja</h6>
-                                            <?php echo $userData['department'];?>
+                                            <h6 class="text-muted f-w-400"><?php echo $userData['department'];?></h6>
+
                                         </div>
                                         <div class="col-sm-6">
                                             <p class="m-b-10 f-w-600">Job Role</p>
@@ -72,6 +72,9 @@ require("view.php");
                 </div>
             </div>
         </div>
+        <?php
+          }
+        ?>
     </div>
   </body>
 </html>
