@@ -21,7 +21,8 @@
   <h1>Live Search</h1>
 
   <form action="search.php" method="POST">
-    <input type="text" name="name" placeholder="Search Here..." id="searchBox">
+    <input type="text" name="name" placeholder="Search Here..."
+    id="searchBox" oninput=search(this.value)>
   </form>
 
   <ul id="dataViewer">
@@ -29,6 +30,8 @@
     <li><?php echo $i["name"]; ?></li>
   <?php } ?>
   </ul>
+
+  <script src="main.js"></script>
 
 </body>
 </html>

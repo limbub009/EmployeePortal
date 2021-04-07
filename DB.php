@@ -30,7 +30,12 @@ class DB {
     return $data;
   }
 
+  public function searchData($name) {
+    $query = "SELECT name FROM employee WHERE name LIKE :name";
+    $stmt = $this->con->prepare($query);
+    $stmt->execute(["name" => "%" . $name . "%"]);
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $data;
+  }
 }
-
-
 ?>
