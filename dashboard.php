@@ -118,19 +118,18 @@ session_start();
             <div class="col-sm-6 feed dashboardbox">
                 <h3>Feed</h3>
                 <article id="postcontainer">
+
                   <?php
-                  $postsquery = "SELECT * FROM feedposts ORDER BY date";
+                  $postsquery = "SELECT * FROM feedpost ORDER BY date";
                   $postsresult = mysqli_query($con, $postsquery);
-                  $posts = mysqli_fetch_assoc($postsresult);
-                  $numposts = mysqli_num_rows($posts);
+                  //$posts = mysqli_fetch_assoc($postsresult);
+                  $numposts = mysqli_num_rows($postsresult);
 
                   $post = "";
 
                   if($numposts > 0){
 
-                    while($row = mysqli_num_rows($posts)){
-                      $id = $row['id'];
-                      $userid = $row['user_id'];
+                    while($row = mysqli_fetch_assoc($postsresult)){
                       $title = $row['title'];
                       $body = $row['body'];
                       $date = $row['date'];
@@ -140,7 +139,6 @@ session_start();
                       <h2>$title</h2>
                       <h3>$date</h3>
                       <p>$body</p>
-                      <p>$userid<p>
                       </div>";
                     }
                     echo $post;
@@ -148,6 +146,7 @@ session_start();
                     echo "No posts";
                   }
                   ?>
+
                 </article>
                   <button onclick="toggleHide('postfeedform')">Add Post</button>
 
