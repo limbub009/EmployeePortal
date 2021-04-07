@@ -19,11 +19,19 @@ body {
 }
 
 .m-r-0 {
-    margin-right: 0px
+    margin-right: -5px
 }
 
 .m-l-0 {
     margin-left: 0px
+}
+
+.topCard{
+    margin-top: 20px;
+}
+
+.bottomCard{
+    margin-top: 45px;
 }
 
 .user-card-full .user-profile {
@@ -40,6 +48,7 @@ body {
 }
 
 .card-block {
+    margin-bottom: -7.5%;
     padding: 1.25rem
 }
 
