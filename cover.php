@@ -1,13 +1,3 @@
-<?php
-session_start();
-
-  include("connection.php");
-  include("functions.php");
-
-  #check_login() is a function written in functions.php
-  #$con is a connection created in connections.php
-  $user_data = check_login($con);
- ?>
 
 <!doctype html>
 <html lang="en">
