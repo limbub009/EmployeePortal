@@ -4,7 +4,7 @@ session_start();
   include("connections.php");
   include("functions.php");
 
-  #CHECK IF USER CLICKED 'POST'
+  #CHECK IF USER CLICKED 'POST' (submitted login details)
   if($_SERVER['REQUEST_METHOD'] == "POST"){
     #something was POSTed
     #collect userdata from post variable
@@ -13,20 +13,24 @@ session_start();
 
     if(!empty($username) && !empty($password))
     {
-      #read from database
+      #read from database IF both username and password are not empty
+
+      #create a query variable (just a string)
       $query = "select * from login where username = '$username' limit 1";
 
+      #pass the string query into the sql query, searching if username exists
       $result = mysqli_query($con, $query);
 
-      if($result){
+      #if query done successfully:
+      if($result){ #if > 0 rows were found with that username
       if($result && mysqli_num_rows($result) > 0){
-
+            #collect the user data (database row) corresponding to the username from the query
             $user_data = mysqli_fetch_assoc($result);
-
+            #check if password for that username matches the user input
             if($user_data['password'] === $password){
               #if user exists and password matches up, log in. start a session with the user id and redirect to dashboard.
-              $_SESSION['user_id'] = $user_data['user_id'];
-              header("Location: dashboard.html");
+              $_SESSION['user_id'] = $user_data['user_id']; #session id = user id (database primary key)
+              header("Location: dashboard.php");
               die;
             }
           }
