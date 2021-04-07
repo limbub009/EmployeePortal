@@ -15,10 +15,15 @@ session_start();
     if(!empty($username) && !empty($password))
     {
       #save to database
-      $user_id = random_num(20);
-      $query = "insert into login (user_id, username, password, role) values ('$user_id', '$username', '$password', '$role')";
-
+      #$user_id = random_num(20);
+      $query = "insert into login (username, password, role) values ('$username', '$password', '$role')";
       mysqli_query($con, $query);
+
+      #creates empty profile with a matching user_id to the login id
+      $id = "select id from login where username = '$username' and password = '$password'";
+
+      $query2 = "insert into employee (user_id) values ('$id')";
+      mysqli_query($con, $query2);
 
       header("Location: login.php");
     }
