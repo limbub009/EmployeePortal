@@ -24,7 +24,7 @@ function check_login($con){
 
 function getUsersData($id){
     $array = array();
-    $q = mysqli_query("SELECT * FROM 'users' WHERE 'ID' =".$id);
+    $q = mysqli_query("SELECT * FROM 'employee' WHERE 'user_id' =".$id);
     while($r = mysql_fetch_assoc($q)){
         $array['id'] = $r['id'];
         $array['name'] = $r['name'];
@@ -36,8 +36,8 @@ function getUsersData($id){
 }
 
 function getId($username){
-    $q = myswl_query("Select 'id' FROM 'users' WHERE 'username'=".$username"'");
-        while($r = mysql_fetch_assoc($q)){
-            return $r['id'];
-        }
+    $q = mysqli_query("Select 'user_id' FROM 'employee' WHERE 'username'='".$username."'");
+    while($r = mysql_fetch_assoc($q)){
+        return $r['id'];
+    }
 }
