@@ -2,6 +2,8 @@
   require_once('DB.php');
 
   $db = new DB();
+  $data = $db->viewData();
+
 ?>
 
 <!DOCTYPE html>
@@ -23,9 +25,9 @@
   </form>
 
   <ul id="dataViewer">
-    <li>Name1</li>
-    <li>Name2</li>
-    <li>Name3</li>
+    <?php foreach($data as $li) {?>
+    <li><?php echo $li["name"]; ?></li>
+  <?php } ?>
   </ul>
 
 </body>

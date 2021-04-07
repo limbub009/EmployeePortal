@@ -8,19 +8,27 @@ class DB {
   private $name = "portal";
 
   public function __construct() {
-    echo "HI";
+    $dsn = "mysql:host=" . $this->host . ";dbname=" . $this->dbname;
+
+    try {
+      $this -> con = new PDO($dsn, $this->user, $this->password);
+      $this->con->setAttribute(PDO::ATTR_ERRMODE
+      PDO::ERRMODE_EXCEPTION);
+      echo "Connection Successful";
+    } catch(PDOException $e) {
+      echo "Connection failed: " . $e->getMessage();
+    }
+  }
+
+  public function viewData() {
+    $query = "SELECT name FROM names";
+    $stmt = $this->con->prepare($query);
+    $stmt->execute();
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $data;
   }
 
 }
-
-
-// $con = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname);
-//
-// if($con->connect_error){
-//   die("Connection failed: " . $conn->connect_error);
-// }
-//
-// echo "Connected successfully";
 
 
 ?>
