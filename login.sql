@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2021 at 03:08 PM
+-- Generation Time: Apr 07, 2021 at 05:59 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -28,7 +28,6 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `login` (
-  `user_id` int(11) NOT NULL,
   `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
@@ -40,13 +39,12 @@ CREATE TABLE `login` (
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`user_id`, `id`, `username`, `password`, `date`, `role`) VALUES
-(0, 1003, 'administrator', 'password', '2021-03-24 20:34:28', 'Administrator'),
-(2147483647, 1005, 'person', 'password', '2021-03-25 10:41:50', 'Consultant'),
-(81354045, 1006, 'consultant', 'password', '2021-03-25 10:42:49', 'Consultant'),
-(2147483647, 1007, 'manager', 'password', '2021-03-25 10:43:01', 'Manager'),
-(2147483647, 1008, 'support', 'password', '2021-03-25 10:43:34', ''),
-(2147483647, 1009, 'hradmin', 'password', '2021-03-25 10:44:10', '');
+INSERT INTO `login` (`id`, `username`, `password`, `date`, `role`) VALUES
+(1003, 'administrator', 'password', '2021-03-24 20:34:28', 'Administrator'),
+(1042, 'consultant', 'pass', '2021-04-07 15:54:59', 'Consultant'),
+(1043, 'manager', 'pass', '2021-04-07 15:55:13', 'Manager'),
+(1046, 'support', 'pass', '2021-04-07 15:56:58', 'SupportStaff'),
+(1047, 'hradmin', 'pass', '2021-04-07 15:57:19', 'HRAdministrator');
 
 --
 -- Indexes for dumped tables
@@ -58,8 +56,7 @@ INSERT INTO `login` (`user_id`, `id`, `username`, `password`, `date`, `role`) VA
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id`),
   ADD KEY `username` (`username`),
-  ADD KEY `date` (`date`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `date` (`date`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -69,7 +66,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1010;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1048;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

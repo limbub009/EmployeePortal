@@ -15,13 +15,28 @@ session_start();
     if(!empty($username) && !empty($password))
     {
       #save to database
-      $user_id = random_num(20);
-      $query = "insert into login (user_id, username, password, role) values ('$user_id', '$username', '$password', '$role')";
 
+      $query = "insert into login (username, password, role) values ('$username', '$password', '$role')";
       mysqli_query($con, $query);
 
-      header("Location: login.php");
-    }
+
+      $query = "select * from login where username = '$username' and password = '$password' limit 1";
+      $result = mysqli_query($con, $query);
+
+      if($result){
+      if($result && mysqli_num_rows($result) > 0){
+          $user_data = mysqli_fetch_assoc($result);
+          $loginid = $user_data['id'];
+
+
+          $query2 = "insert into employee (user_id) values ('$loginid')";
+          mysqli_query($con, $query2);
+          header("Location: cover.php");
+          }
+        }
+
+      }
+
     else{
       echo "Please fill in all the fields";
     }
@@ -50,8 +65,8 @@ session_start();
           <select id="role" name="role">
             <option value="Consultant">Consultant</option>
             <option value="Manager">Manager</option>
-            <option value="Support Staff">Support Staff</option>
-            <option value="HR Administrator">HR Administrator</option>
+            <option value="SupportStaff">Support Staff</option>
+            <option value="HRAdministrator">HR Administrator</option>
           </select>
 
           <input type="submit" name="" value="Create">

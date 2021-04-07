@@ -24,38 +24,45 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedpost`
+-- Table structure for table `employee`
 --
 
-CREATE TABLE `feedpost` (
-  `id` int(11) NOT NULL,
-  `userid` int(11) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `body` varchar(500) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp()
+CREATE TABLE `employee` (
+  `user_id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `departmentid` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`user_id`, `name`, `email`, `phone`, `departmentid`) VALUES
+(1042, '', '', 0, 0),
+(1043, '', '', 0, 0),
+(1047, '', '', 0, 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `feedpost`
+-- Indexes for table `employee`
 --
-ALTER TABLE `feedpost`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id` (`id`),
-  ADD KEY `postfk` (`userid`);
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Constraints for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `feedpost`
+-- Constraints for table `employee`
 --
-ALTER TABLE `feedpost`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `employee`
+  ADD CONSTRAINT `loginfk` FOREIGN KEY (`user_id`) REFERENCES `login` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
