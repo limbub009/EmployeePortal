@@ -117,10 +117,41 @@ session_start();
         <div class = "row row2">
             <div class="col-sm-6 feed dashboardbox">
                 <h3>Feed</h3>
-                <p>lorem ipsum</p>
+                <article id="postcontainer">
+                  <?php
+                  $postsquery = "SELECT * FROM feedposts ORDER BY date";
+                  $postsresult = mysqli_query($con, $postsquery);
+                  $posts = mysqli_fetch_assoc($postsresult);
+                  $numposts = mysqli_num_rows($posts);
+
+                  $post = "";
+
+                  if($numposts > 0){
+
+                    while($row = mysqli_num_rows($posts)){
+                      $id = $row['id'];
+                      $userid = $row['user_id'];
+                      $title = $row['title'];
+                      $body = $row['body'];
+                      $date = $row['date'];
+
+                      #REPLACE user id WITH EMPLOYEE NAME
+                      $post .= "<div>
+                      <h2>$title</h2>
+                      <h3>$date</h3>
+                      <p>$body</p>
+                      <p>$userid<p>
+                      </div>";
+                    }
+                    echo $post;
+                  } else{
+                    echo "No posts";
+                  }
+                  ?>
+                </article>
                   <button onclick="toggleHide('postfeedform')">Add Post</button>
-                  <div id="postfeedform">
-                    <form method="POST" action="#">
+
+                    <form method="POST" action="#" id="postfeedform" style="display:none">
                         <p>Title</p>
                         <input type="text" STYLE="color: black" name="title" placeholder="Title">
 
@@ -129,7 +160,7 @@ session_start();
                         <br>
                         <input type="submit" name="" value="Post">
                     </form>
-                </div>
+
             </div>
             <div class="col-sm-4 deptInfo dashboardbox">
                 <h3>Department Information</h3>

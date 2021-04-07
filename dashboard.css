@@ -58,6 +58,10 @@ div{
     margin-top: -10%;
 }
 
+#postfeedform{
+    display: none;
+}
+
 .tasks{
     padding: 30px;
     width: 37.5%;
