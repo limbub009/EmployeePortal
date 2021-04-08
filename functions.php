@@ -35,6 +35,28 @@ function random_num($length){
   }
   return $text;
 }
+
+function getUsersData($name){
+    $array = array();
+    $q = mysqli_query("SELECT * FROM 'employee' WHERE 'name' =".$name);
+    while($r = mysql_fetch_assoc($q)){
+        $array['user_id'] = $r['user_id'];
+        $array['name'] = $r['name'];
+        $array['email'] = $r['email'];
+        $array['phone'] = $r['phone'];
+        $array['departmentid'] = $r['departmentid'];
+    }
+    return $array;
+}
+
+function getId($username){
+    $q = mysqli_query("Select 'user_id' FROM 'employee' WHERE 'username'='".$username."'");
+    while($r = mysql_fetch_assoc($q)){
+        return $r['user_id'];
+    }
+}
+
+
 ?>
 
 <script>

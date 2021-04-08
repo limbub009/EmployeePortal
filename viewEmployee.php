@@ -10,13 +10,15 @@
 <html lang="en">
   <head>
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="assets/dist/js/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Include the above in your HEAD tag ---------->
     <link href="viewEmployee.css" rel="stylesheet">
   </head>
   <body>
   <?php
+
   if(!isset($_GET['searchname']))
   {
   ?>
