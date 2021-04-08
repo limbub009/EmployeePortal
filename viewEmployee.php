@@ -10,14 +10,15 @@
 <html lang="en">
   <head>
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="assets/dist/js/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+    <!-- Include the above in your HEAD tag ---------->
     <link href="viewEmployee.css" rel="stylesheet">
   </head>
   <body>
   <?php
-  if(!isset($_SESSION['searchName']))
+  // NEED TO MAKE ALL SESSION VARIABLES $_GET.
+  if(!isset($_GET['searchname']))
   {
   ?>
     <div class="page-content page-container" id="page-content">
@@ -32,8 +33,8 @@
                                     <div class="m-b-25">
                                         <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
                                     </div>
-                                <?php if(isset($_SESSION['searchName'])) {
-                                $userData = getUserData(getID($_SESSION['searchName']))
+                                <?php if(isset($_GET['searchname'])) {
+                                $userData = getUserData(getID($_GET['searchname']))
                                 ?>
                                 <h6 class="f-w-600"><?php echo $userData['name']; ?></h6>
                                 </div>

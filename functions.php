@@ -36,9 +36,9 @@ function random_num($length){
   return $text;
 }
 
-function getUsersData($id){
+function getUsersData($name){
     $array = array();
-    $q = mysqli_query("SELECT * FROM 'employee' WHERE 'user_id' =".$id);
+    $q = mysqli_query("SELECT * FROM 'employee' WHERE 'name' =".$name);
     while($r = mysql_fetch_assoc($q)){
         $array['id'] = $r['id'];
         $array['name'] = $r['name'];
