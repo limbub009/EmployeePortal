@@ -23,17 +23,18 @@ function viewSearchResult(data) {
     console.log("Hi");
     const li = document.createElement("li");
     li.innerHTML = data[i]["name"];
-    li.onclick = function() {postSearchName()};
+    li.onclick = function() {postSearchName(li)};
     dataViewer.appendChild(li);
   }
 }
 
-function postSearchName() {
+function postSearchName(li) {
   alert("bye");
-  fetch('viewEmployee.php', {
-    method: 'POST',
-    body: new URLSearchParams('searchname='+name)
-  })
+  // fetch('viewEmployee.php', {
+  //   method: 'POST',
+  //   body: new URLSearchParams('searchname='+li.innerHTML)
+  // })
+  window.location.href = 'viewEmployee.php?searchname='+(li.innerHTML);
 }
 
 // $('li').on('click', function() {
