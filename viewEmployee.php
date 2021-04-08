@@ -21,7 +21,6 @@
   {
   ?>
     <div class="page-content page-container" id="page-content">
-
         <div class="padding">
             <div class="row container d-flex justify-content-center">
                 <div class="col-xl-6 col-md-12">
@@ -54,7 +53,6 @@
                                       <div class="col-sm-6">
                                           <p class="m-b-10 f-w-600">Department</p>
                                           <h6 class="text-muted f-w-400"><?php echo $userData['department']; ?></h6>
-
                                       </div>
                                       <div class="col-sm-6">
                                           <p class="m-b-10 f-w-600">Job Role</p>

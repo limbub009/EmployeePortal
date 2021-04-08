@@ -41,11 +41,11 @@ function getUsersData($id){
     $array = array();
     $q = mysqli_query("SELECT * FROM 'employee' WHERE 'user_id' =".$id);
     while($r = mysql_fetch_assoc($q)){
-        $array['id'] = $r['id'];
+        $array['user_id'] = $r['user_id'];
         $array['name'] = $r['name'];
         $array['email'] = $r['email'];
         $array['phone'] = $r['phone'];
-        $array['department'] = $r['department'];
+        $array['departmentid'] = $r['departmentid'];
     }
     return $array;
 }
@@ -53,7 +53,7 @@ function getUsersData($id){
 function getId($username){
     $q = mysqli_query("Select 'user_id' FROM 'employee' WHERE 'username'='".$username."'");
     while($r = mysql_fetch_assoc($q)){
-        return $r['id'];
+        return $r['user_id'];
     }
 }
 
