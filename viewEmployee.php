@@ -10,6 +10,7 @@
 <html lang="en">
   <head>
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Include the above in your HEAD tag ---------->
@@ -17,11 +18,12 @@
   </head>
   <body>
   <?php
-  // NEED TO MAKE ALL SESSION VARIABLES $_GET.
+
   if(!isset($_GET['searchname']))
   {
   ?>
     <div class="page-content page-container" id="page-content">
+
         <div class="padding">
             <div class="row container d-flex justify-content-center">
                 <div class="col-xl-6 col-md-12">
@@ -54,6 +56,7 @@
                                       <div class="col-sm-6">
                                           <p class="m-b-10 f-w-600">Department</p>
                                           <h6 class="text-muted f-w-400"><?php echo $userData['department']; ?></h6>
+
                                       </div>
                                       <div class="col-sm-6">
                                           <p class="m-b-10 f-w-600">Job Role</p>
