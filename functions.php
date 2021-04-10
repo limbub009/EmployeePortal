@@ -1,5 +1,4 @@
 <?php
-include("connections.php");
 #check if the user is already logged in and return their user data (their row in the database)
 function check_login($con){
   #check if session value is set
@@ -20,7 +19,7 @@ function check_login($con){
   header("location: cover.php");
   die; #stop the code here
 }
-};
+}
 
 
 #creates a random number for the user id
@@ -35,19 +34,7 @@ function random_num($length){
     $text .= rand(0,9);
   }
   return $text;
-};
-
-// function deletepost($postid){
-//   $delete = mysqli_query($con,"delete from feedpost where id = '$postid'"); // delete query
-//   if($delete){
-//     header('location:dashboard.php');
-//     exit;
-//   }
-//   else{
-//     echo "Error deleting post";
-//   }
-// };
-
+}
 ?>
 
 <script>
