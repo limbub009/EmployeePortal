@@ -40,43 +40,46 @@ session_start();
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-          <a class="navbar-brand" href="#">Employee Portal</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div id="linksnav" class="collapse navbar-collapse" id="navbarCollapse">
-              <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <!-- ADD PHP TO MAKE IT VISIBLE ONLY WHEN USER IS LOGGED IN-->
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Your Profile</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">View Schedule</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Search Employee</a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                  </li> -->
-                  <!-- <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li> -->
-              </ul>
-              <form class="d-flex">
-                  <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-                  <button class="btn btn-outline-success" type="submit" style="margin-right: 10%;">LogIn</button>
-                  <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
-                  <button class="btn btn-outline-success" type="submit">SignIn</button>
-              </form>
-          </div>
+        <a class="navbar-brand" href="#">Employee Portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="cover.php">Home</a>
+            </li>
+            <!-- ADD PHP TO MAKE IT VISIBLE ONLY WHEN USER IS LOGGED IN-->
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.php">Your Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">View Schedule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Search Employee</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li> -->
+          </ul>
+          <form class="d-flex">
+            <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+            <button class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='login.php'>Log In</a></button>
+            <button class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='logout.php'>Log Out</a></button>
+            <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
+            <button class="btn btn-outline-success" type="submit">SignIn</button>
+          </form>
+        </div>
       </div>
-  </nav>
+    </nav>
+  </header>
 
 
 
@@ -115,8 +118,8 @@ session_start();
             </div>
         </div>
         <div class = "row row2">
-            <div class="col-sm-6 feed dashboardbox">
-                <h3>Feed</h3>
+            <div id="feed" class="col-sm-6 feed dashboardbox" style="overflow-y: scroll; padding-top: 0em;">
+                <h3 style="position: sticky; top: 0; padding: 2em; background-color: white; margin-top: 0em; padding: 1em;">Feed</h3>
                 <article id="postcontainer">
 
                   <?php
@@ -133,13 +136,25 @@ session_start();
                       $title = $row['title'];
                       $body = $row['body'];
                       $date = $row['date'];
+                      $postuserid = $row['userid'];
+                      $postid = $row['id'];
 
                       #REPLACE user id WITH EMPLOYEE NAME
-                      $post .= "<div>
-                      <h2>$title</h2>
-                      <h3>$date</h3>
-                      <p>$body</p>
-                      </div>";
+                      $post .= "<div style='background: rgba(115, 115, 115, 0.1); padding: 0.5em; margin-left: 0em;'>
+                      <h4 style='text-align: left; border-bottom: solid; border-width: 1px; border-color: lightgrey;'>$title</h2>
+                      <h6>$date</h3>
+                      <p style='font-size: 0.8em'>$body</p>
+                      ";
+
+
+                       if($_SESSION['id'] == $postuserid){
+                         $post .= "
+                         <button style='font-size: 0.5em; border: none; color: red; background-color: white;'>
+                         <a href='delete.php'>Delete</a>
+                         </button>
+                         ";
+                       };
+                       $post .= "</div>";
                     }
                     echo $post;
                   } else{
@@ -148,7 +163,7 @@ session_start();
                   ?>
 
                 </article>
-                  <button onclick="toggleHide('postfeedform')">Add Post</button>
+                  <button style="border: none; margin: 1em;" onclick="toggleHide('postfeedform')">Add Post</button>
 
                     <form method="POST" action="#" id="postfeedform" style="display:none">
                         <p>Title</p>

@@ -1,3 +1,4 @@
+
 body{
   background: url(./images/background1.jpg);
 }
@@ -61,6 +62,14 @@ div{
 #postfeedform{
     display: none;
 }
+#postcontainer button{
+    border: none;
+}
+
+article{
+  text-align: left;
+}
+
 
 .tasks{
     padding: 30px;
