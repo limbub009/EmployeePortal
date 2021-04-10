@@ -36,10 +36,13 @@ function random_num($length){
   return $text;
 }
 
-function getUsersData($name){
+function getUsersData($name, $con){
     $array = array();
-    $q = mysqli_query("SELECT * FROM 'employee' WHERE 'name' =".$name);
-    while($r = mysql_fetch_assoc($q)){
+    $query = "SELECT * FROM 'employee' WHERE 'name' LIKE".$name;
+
+    $result = mysqli_query($con, $query);
+
+    while($r = mysql_fetch_assoc($result)){
         $array['user_id'] = $r['user_id'];
         $array['name'] = $r['name'];
         $array['email'] = $r['email'];
@@ -49,8 +52,8 @@ function getUsersData($name){
     return $array;
 }
 
-function getId($username){
-    $q = mysqli_query("Select 'user_id' FROM 'employee' WHERE 'username'='".$username."'");
+function getId($username, $con){
+    $q = mysqli_query($con, "Select 'user_id' FROM 'employee' WHERE 'username'='".$username."'");
     while($r = mysql_fetch_assoc($q)){
         return $r['user_id'];
     }

@@ -43,13 +43,13 @@ include("functions.php");
         </div>
     </nav>
     <?php
-    if(!isset($_SESSION['searchName']))
-    {
+    // if(!isset($_GET['searchname']))
+    // {
     ?>
     <div class="main">
         <div class="image">
-            <?php if(isset($_SESSION['searchName'])) {
-            $userData = getUserData(getID($_SESSION['searchName']))
+            <?php if(isset($_GET['searchname'])) {
+            $userData = getUsersData($con, $_GET['searchname'])
             ?>
             <img src = empIcon.png>
             <h6><?php echo $userData['name']; ?></h6>
@@ -78,7 +78,7 @@ include("functions.php");
         </div>
     </div>
     <?php
-    }
+    // }
     }
     ?>
 </body>
