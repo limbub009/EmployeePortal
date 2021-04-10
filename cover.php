@@ -49,11 +49,11 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="cover.php">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <!-- ADD PHP TO MAKE IT VISIBLE ONLY WHEN USER IS LOGGED IN-->
           <li class="nav-item">
-            <a class="nav-link" href="dashboard.php">Your Profile</a>
+            <a class="nav-link" href="#">Your Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">View Schedule</a>
@@ -70,8 +70,7 @@
         </ul>
         <form class="d-flex">
           <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-          <button class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='login.php'>Log In</a></button>
-          <button class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='logout.php'>Log Out</a></button>
+          <button class="btn btn-outline-success" type="submit" style="margin-right: 7%;">LogIn</button>
           <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
           <button class="btn btn-outline-success" type="submit">SignIn</button>
         </form>
