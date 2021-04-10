@@ -22,7 +22,6 @@ include("functions.php");
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
-                    <!-- ADD PHP TO MAKE IT VISIBLE ONLY WHEN USER IS LOGGED IN-->
                     <li class="nav-item">
                         <a class="nav-link" href="#">Your Profile</a>
                     </li>
@@ -42,19 +41,10 @@ include("functions.php");
             </div>
         </div>
     </nav>
-    <?php
-    // if(!isset($_GET['searchname']))
-    // {
-    ?>
     <div class="main">
         <div class="image">
             <?php if(isset($_GET['searchname'])) {
             $userData = getUsersData($con, $_GET['searchname']);
-            // foreach ( $userData as $i ) {
-            //   echo $i;
-            // }
-            echo $userData;
-
             ?>
             <img src = empIcon.png>
             <h6><?php echo $userData['name']; ?></h6>
@@ -63,7 +53,7 @@ include("functions.php");
             <div class="row topCard">
                 <div class="col-sm-6 top">
                     <p>Email</p>
-                    <h6><?php echo $userData['email']; ?></h6>
+                    <?php echo $userData['email']; ?>
                 </div>
                 <div class="col-sm-6 top">
                     <p>Phone</p>
@@ -83,7 +73,6 @@ include("functions.php");
         </div>
     </div>
     <?php
-    // }
     }
     ?>
 </body>
