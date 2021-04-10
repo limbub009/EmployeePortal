@@ -123,7 +123,7 @@ session_start();
                 <article id="postcontainer">
 
                   <?php
-                  $postsquery = "SELECT * FROM feedpost ORDER BY date";
+                  $postsquery = "SELECT * FROM feedpost ORDER BY date DESC";
                   $postsresult = mysqli_query($con, $postsquery);
                   $numposts = mysqli_num_rows($postsresult);
 
