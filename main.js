@@ -29,24 +29,5 @@ function viewSearchResult(data) {
 }
 
 function postSearchName(li) {
-  alert("bye");
-  // fetch('viewEmployee.php', {
-  //   method: 'POST',
-  //   body: new URLSearchParams('searchname='+li.innerHTML)
-  // })
-  window.location.href = 'viewEmployee.php?searchname='+(li.innerHTML);
+  window.location.href = 'viewEmp.php?searchname='+(li.innerHTML);
 }
-
-// $('li').on('click', function() {
-//     console.log("Bye");
-//      alert(document.getElementsByTagName('li')[0].innerHTML);
-//      alert("bye");
-// });
-
-// $(document).ready(function()
-//  {
-//   $("ul").on("click","li", function(){
-//     alert("Hello");
-//      // alert($(this).find("span.t").text());
-//   });
-// });
