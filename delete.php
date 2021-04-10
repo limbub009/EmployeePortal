@@ -4,6 +4,7 @@ include("dashboard.php");
 
 $delete = mysqli_query($con,"delete from feedpost where id = '$postid'"); // delete query
 if($delete){
+  mysqli_close($con);
   header('location:dashboard.php');
   exit;
 }
