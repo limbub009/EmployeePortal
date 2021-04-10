@@ -47,27 +47,26 @@ include("functions.php");
             $userData = getUsersData($con, $_GET['searchname']);
             ?>
             <img src = empIcon.png>
-            <h6><?php echo $userData['name']; ?></h6>
         </div>
         <div className="info">
             <div class="row topCard">
                 <div class="col-sm-6 top">
-                    <p>Email</p>
-                    <?php echo $userData['email']; ?>
+                    <p>Name</p>
+                    <h6><?php echo $userData['name']; ?></h6>
                 </div>
                 <div class="col-sm-6 top">
-                    <p>Phone</p>
-                    <h6><?php echo $userData['phone']; ?></h6>
+                    <p>Department</p>
+                    <h6><?php echo $userData['departmentid']; ?></h6>
                 </div>
             </div>
             <div class="row bottomCard">
                 <div class="col-sm-6 bottom">
-                    <p>Department</p>
-                    <h6><?php echo $userData['departmentid']; ?></h6>
+                    <p>Email</p>
+                    <h6><?php echo $userData['email']; ?></h6>
                 </div>
                 <div class="col-sm-6 bottom">
-                    <p>Job Role</p>
-                    <h6><?php echo $userData['departmentid']; ?></h6>
+                    <p>Phone</p>
+                    <h6><?php echo $userData['phone']; ?></h6>
                 </div>
             </div>
         </div>
