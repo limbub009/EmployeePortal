@@ -125,7 +125,6 @@ session_start();
                   <?php
                   $postsquery = "SELECT * FROM feedpost ORDER BY date";
                   $postsresult = mysqli_query($con, $postsquery);
-                  //$posts = mysqli_fetch_assoc($postsresult);
                   $numposts = mysqli_num_rows($postsresult);
 
                   $post = "";

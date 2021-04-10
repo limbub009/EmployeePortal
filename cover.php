@@ -53,7 +53,7 @@
           </li>
           <!-- ADD PHP TO MAKE IT VISIBLE ONLY WHEN USER IS LOGGED IN-->
           <li class="nav-item">
-            <a class="nav-link" href="#">Your Profile</a>
+            <a class="nav-link" href="dashboard.php">Your Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">View Schedule</a>
@@ -70,9 +70,9 @@
         </ul>
         <form class="d-flex">
           <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-          <button class="btn btn-outline-success" type="submit" style="margin-right: 7%;">LogIn</button>
+          <button class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='login.php' style="text-decoration: none; color: white;">LogIn</a></button>
           <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
-          <button class="btn btn-outline-success" type="submit">SignIn</button>
+          <button class="btn btn-outline-success" type="submit"><a style="text-decoration: none; color: white;" href='createAccount.php'>Create Account</a></button>
         </form>
       </div>
     </div>
