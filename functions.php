@@ -36,25 +36,29 @@ function random_num($length){
   return $text;
 }
 
-function getUsersData($name, $con){
-    $array = array();
-    $query = "SELECT * FROM 'employee' WHERE 'name' LIKE".$name;
+function getUsersData($con, $name)
+{
+    $query = "SELECT * FROM employee WHERE name ='$name'";
+    $result = $con->query($query);
+    if ($result && mysqli_num_rows($result) > 0) {
 
-    $result = mysqli_query($con, $query);
+        $data = array();
 
-    while($r = mysql_fetch_assoc($result)){
-        $array['user_id'] = $r['user_id'];
-        $array['name'] = $r['name'];
-        $array['email'] = $r['email'];
-        $array['phone'] = $r['phone'];
-        $array['departmentid'] = $r['departmentid'];
-    }
-    return $array;
+        //while ($row = mysqli_fetch_assoc($result))
+        while ($row = $result->fetch_assoc())
+        {
+            $data['name'] = $row['name'];
+            $data['email'] = $row['email'];
+            $data['departmentid'] = $row['departmentid'];
+            $data['phone'] = $row['phone'];
+        }
+        return $data;
+   }
 }
 
 function getId($username, $con){
     $q = mysqli_query($con, "Select 'user_id' FROM 'employee' WHERE 'username'='".$username."'");
-    while($r = mysql_fetch_assoc($q)){
+    while($r = mysqli_fetch_assoc($q)){
         return $r['user_id'];
     }
 }
@@ -70,7 +74,7 @@ function toggleHide(input){
     myDiv.style.display = "block";
   } else {
     myDiv.style.display = "none";
-  }
+  };
 }
 
 </script>
