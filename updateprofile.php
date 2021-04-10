@@ -32,16 +32,16 @@
 
 if($sql2)
        {
-              /*ERROR*/
+              header('location:dashboard.php');
        }
        else
        {
-              /*ERROR*/
+              /*failed*/
        }
     }
     else
     {
-        /*ERROR*/
+        /*failed*/
     }
  }
 ?>
