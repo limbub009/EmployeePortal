@@ -129,6 +129,7 @@ session_start();
                   $numposts = mysqli_num_rows($postsresult);
 
                   $post = "";
+                  $comments ="";
 
                   if($numposts > 0){
 
@@ -150,11 +151,12 @@ session_start();
                        if($_SESSION['id'] == $postuserid){
                          $post .= "
                          <button style='font-size: 0.5em; border: none; color: red; background-color: white;'>
-                         <a href='delete.php'>Delete</a>
+                         <a href='deletepost.php'>Delete</a>
                          </button>
                          ";
                        };
                        $post .= "</div>";
+
                     }
                     echo $post;
                   } else{
