@@ -49,7 +49,12 @@ include("functions.php");
     <div class="main">
         <div class="image">
             <?php if(isset($_GET['searchname'])) {
-            $userData = getUsersData($con, $_GET['searchname'])
+            $userData = getUsersData($con, $_GET['searchname']);
+            // foreach ( $userData as $i ) {
+            //   echo $i;
+            // }
+            echo $userData;
+
             ?>
             <img src = empIcon.png>
             <h6><?php echo $userData['name']; ?></h6>
