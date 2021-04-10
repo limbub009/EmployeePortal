@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+#WORKING VERSION
 #ADD CHECK LOGIN!!
 
   include("connections.php");
@@ -117,10 +117,60 @@ session_start();
         <div class = "row row2">
             <div class="col-sm-6 feed dashboardbox">
                 <h3>Feed</h3>
-                <p>lorem ipsum</p>
+                <article id="postcontainer">
+
+                  <?php
+                  $postsquery = "SELECT * FROM feedpost ORDER BY date";
+                  $postsresult = mysqli_query($con, $postsquery);
+                  //$posts = mysqli_fetch_assoc($postsresult);
+                  $numposts = mysqli_num_rows($postsresult);
+
+                  $post = "";
+                  $comments ="";
+
+                  if($numposts > 0){
+
+                    while($row = mysqli_fetch_assoc($postsresult)){
+                      $title = $row['title'];
+                      $body = $row['body'];
+                      $date = $row['date'];
+
+                      #REPLACE user id WITH EMPLOYEE NAME
+<<<<<<< HEAD
+                      $post .= "<div style='background: rgba(115, 115, 115, 0.1); padding: 0.5em; margin-left: 0em;'>
+                      <h4 style='text-align: left; border-bottom: solid; border-width: 1px; border-color: lightgrey;'>$title</h2>
+                      <h6>$date</h3>
+                      <p style='font-size: 0.8em'>$body</p>
+                      ";
+
+
+                       if($_SESSION['id'] == $postuserid){
+                         $post .= "
+                         <button style='font-size: 0.5em; border: none; color: red; background-color: white;'>
+                         <a href='deletepost.php'>Delete</a>
+                         </button>
+                         ";
+                       };
+                       $post .= "</div>";
+
+=======
+                      $post .= "<div>
+                      <h2>$title</h2>
+                      <h3>$date</h3>
+                      <p>$body</p>
+                      </div>";
+>>>>>>> parent of d4e6500 (feed fully functional)
+                    }
+                    echo $post;
+                  } else{
+                    echo "No posts";
+                  }
+                  ?>
+
+                </article>
                   <button onclick="toggleHide('postfeedform')">Add Post</button>
-                  <div id="postfeedform">
-                    <form method="POST" action="#">
+
+                    <form method="POST" action="#" id="postfeedform" style="display:none">
                         <p>Title</p>
                         <input type="text" STYLE="color: black" name="title" placeholder="Title">
 
@@ -129,7 +179,7 @@ session_start();
                         <br>
                         <input type="submit" name="" value="Post">
                     </form>
-                </div>
+
             </div>
             <div class="col-sm-4 deptInfo dashboardbox">
                 <h3>Department Information</h3>
