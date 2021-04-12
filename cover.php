@@ -61,12 +61,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Search Employee</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li> -->
+  
         </ul>
         <form class="d-flex">
           <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
