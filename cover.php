@@ -124,33 +124,33 @@ error_reporting(0);
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
   <div class="container marketing">
-  <h1> TOP EMPLOYEES OF THE MONTH </h1>
+  <h1> PEOPLE YOU NEED TO LOOK OUT FOR UWU</h1>
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
-        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://www.fdmgroup.com/wp-content/uploads/david-lister-1-500x500.jpg"/><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/></img>
+        <img class="bd-placeholder-img rounded-circle" width="180" height="180" src="https://www.fdmgroup.com/wp-content/uploads/david-lister-1-500x500.jpg"/><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/></img>
         <h2>David Lister</h2>
         <p>Non-Executive Chairman</p>
-        <p><a class="btn btn-secondary" href="https://www.fdmgroup.com/investors/our-board-of-directors/#David%20Lister">View details &raquo;</a></p>
+        <p><a class="btn btn-secondary" target="_blank" href="https://www.fdmgroup.com/investors/our-board-of-directors/#David%20Lister">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="images/RodFlavell.jpg"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/></img>
+        <img class="bd-placeholder-img rounded-circle" width="180" height="180" src="images/RodFlavell.jpg"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/></img>
         <h2>Rod Flavell</h2>
         <p>Chief Executive Officer</p>
-        <p><a class="btn btn-secondary" href="https://www.fdmgroup.com/investors/our-board-of-directors/#Rod%20Flavell">View details &raquo;</a></p>
+        <p><a class="btn btn-secondary" target="_blank" href="https://www.fdmgroup.com/investors/our-board-of-directors/#Rod%20Flavell">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://www.fdmgroup.com/wp-content/uploads/sheila-flavell-1-1-500x500.jpg"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/></img>
+        <img class="bd-placeholder-img rounded-circle" width="180" height="180" src="https://www.fdmgroup.com/wp-content/uploads/sheila-flavell-1-1-500x500.jpg"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/></img>
         <h2>Sheila Flavell CBE</h2>
         <p>Chief Operating Officer</p>
-        <p><a class="btn btn-secondary" href="https://www.fdmgroup.com/investors/our-board-of-directors/#Sheila%20Flavell%20CBE">View details &raquo;</a></p>
+        <p><a class="btn btn-secondary" target="_blank" href="https://www.fdmgroup.com/investors/our-board-of-directors/#Sheila%20Flavell%20CBE">View details &raquo;</a></p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.col-lg-4 -->
     <div class="col-lg-4">
-      <img class="bd-placeholder-img rounded-circle" width="140" height="140" src="https://www.fdmgroup.com/wp-content/uploads/andy-brown-2-500x500.jpg"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/></img>
+      <img class="bd-placeholder-img rounded-circle" width="180" height="180" src="https://www.fdmgroup.com/wp-content/uploads/andy-brown-2-500x500.jpg"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/></img>
       <h2>Andy Brown</h2>
       <p>Chief Commercial Officer</p>
-      <p><a class="btn btn-secondary" href="https://www.fdmgroup.com/investors/our-board-of-directors/#Andy%20Brown">View details &raquo;</a></p>
+      <p><a class="btn btn-secondary" href="https://www.fdmgroup.com/investors/our-board-of-directors/#Andy%20Brown" target="_blank" >View details &raquo;</a></p>
     </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
   </div><!-- /.container -->
