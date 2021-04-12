@@ -47,6 +47,8 @@ session_start();
     }
   }
 
+  $empdata = emp_data($con);
+
 ?>
 <html>
 <head>
@@ -107,10 +109,10 @@ session_start();
                 <img src="./images/avatar2.jpg" height="90px" width="85px"/>
                 <ul>
                     <li>
-                        Name:
+                        Name: <?php echo $empdata['name']; ?>
                     </li>
                     <li>
-                        Email:
+                        Email: <?php echo $empdata['email']; ?>
                     </li>
                 </ul>
                 </div>
@@ -195,7 +197,7 @@ session_start();
                   ?>
 
                 </article>
-                  <button style="border: none; margin: 1em;" onclick="toggleHide('postfeedform')">Add Post</button>
+                  <button style="border: none; margin: 1em; font-size: 0.5em;" onclick="toggleHide('postfeedform')">Add Post</button>
 
                     <form method="POST" action="#" id="postfeedform" style="display:none; width: 100%;">
                         <p>Title</p>
@@ -209,7 +211,7 @@ session_start();
                         border-width: 1px; background-color: lightgrey;
                         width: 100%; height: 10em; font-size: 0.8em;"></textarea>
                         <br>
-                        <input style="border: none; margin: 1em;"type="submit" name="submitpost" value="Post">
+                        <input style="font-size: 0.5em;border: none; margin: 1em;"type="submit" name="submitpost" value="Post">
                     </form>
 
             </div>

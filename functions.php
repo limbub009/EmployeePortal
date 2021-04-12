@@ -21,6 +21,27 @@ function check_login($con){
 }
 }
 
+function emp_data($con){
+  #check if session value is set
+  if(isset($_SESSION['id']))
+  {
+    $id = $_SESSION['id'];
+    $query = "select * from employee where user_id = '$id' limit 1";
+
+    $result = mysqli_query($con, $query);
+    if($result && mysqli_num_rows($result) > 0)
+    {
+      $emp_data = mysqli_fetch_assoc($result);
+      return $emp_data;
+    }
+  }
+  else{
+  #elseredirect to login
+  header("location: cover.php");
+  die; #stop the code here
+}
+}
+
 
 #creates a random number for the user id
 function random_num($length){
