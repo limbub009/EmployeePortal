@@ -112,5 +112,11 @@ function toggleHide(input){
   };
 }
 
+function hideLoginButton(input){
+  var mybutton = document.getElementById(input);
+
+  mybutton.style.display = "none";
+}
+
 
 </script>

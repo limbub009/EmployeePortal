@@ -61,13 +61,24 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Search Employee</a>
           </li>
-  
+
         </ul>
         <form class="d-flex">
           <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-          <button class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='login.php' style="text-decoration: none; color: white;">LogIn</a></button>
+
+
+            <?php if(!isset($_SESSION['id']) || empty($_SESSION['id'])){ ?>
+            <button id="logoutbutton" class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='login.php' style="text-decoration: none; color: white;">LogIn</a></button>
+
+            <?php } else { ?>
+
+            <button id="loginbutton" class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='logout.php' style="text-decoration: none; color: white;">LogOut</a></button>
           <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
+            <?php } ?>
+
           <button class="btn btn-outline-success" type="submit"><a style="text-decoration: none; color: white;" href='createAccount.php'>Create Account</a></button>
+
+
         </form>
       </div>
     </div>

@@ -68,7 +68,7 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="cover.php">Home</a>
             </li>
             <!-- ADD PHP TO MAKE IT VISIBLE ONLY WHEN USER IS LOGGED IN-->
             <li class="nav-item">
@@ -84,7 +84,18 @@ session_start();
           </ul>
           <form class="d-flex">
             <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-            <button class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='login.php' style="text-decoration: none; color: white;">LogIn</a></button>
+
+            
+            <?php if(!isset($_SESSION['id']) || empty($_SESSION['id'])){ ?>
+            <button id="logoutbutton" class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='login.php' style="text-decoration: none; color: white;">LogIn</a></button>
+
+            <?php } else { ?>
+
+            <button id="loginbutton" class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='logout.php' style="text-decoration: none; color: white;">LogOut</a></button>
+          <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
+            <?php } ?>
+
+
             <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
             <button class="btn btn-outline-success" type="submit"><a style="text-decoration: none; color: white;" href='createAccount.php'>Create Account</a></button>
           </form>
@@ -165,7 +176,7 @@ session_start();
 
 
                       #REPLACE user id WITH EMPLOYEE NAME
-                      $post .= "<div style='background: rgba(115, 115, 115, 0.1); padding: 0.5em; margin-left: 0em;'>
+                      $post .= "<div style='margin: 1%; background: rgba(115, 115, 115, 0.1); padding: 0.5em; margin-left: 0em;'>
                       <h4 style='text-align: left; border-bottom: solid; border-width: 1px; border-color: lightgrey;'>$title</h4>
                       <h5>$emp_name</h5>
                       <h6 style='text-align: left; border-bottom: solid; border-width: 1px; border-color: lightgrey;'>$date</h6>
