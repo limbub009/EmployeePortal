@@ -14,7 +14,7 @@
           <a class="nav-link" href="dashboard.php">Your Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">View Schedule</a>
+          <a class="nav-link" href="timetable.html">View Schedule</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="searchIndex.php">Search Employee</a>
