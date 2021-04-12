@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="searchstyle.css">
 <!-- Bootstrap core CSS -->
 <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="main.js"></script>
 </head>
 
 <body>
@@ -73,8 +74,6 @@
     <li><?php echo $i["name"]; ?></li>
   <?php } ?>
   </ul>
-
-  <script src="main.js"></script>
 
 </body>
 </html>
