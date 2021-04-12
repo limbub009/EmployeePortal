@@ -89,6 +89,7 @@ session_start();
                     </li>
                 </ul>
                 </div>
+              <button class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='editprofile.php' style="text-decoration: none; color: black;">Edit Profile</a></button>
             </div>
             <div class="col-sm-4 tasks dashboardbox">
                 <h3>Tasks</h3>
