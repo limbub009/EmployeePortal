@@ -140,11 +140,10 @@ session_start();
                   $postsquery = "SELECT * FROM feedpost ORDER BY date DESC";
                   $postsresult = mysqli_query($con, $postsquery);
                   $numposts = mysqli_num_rows($postsresult);
-
                   $post = "";
 
-                  if($numposts > 0){
 
+                  if($numposts > 0){
                     while($row = mysqli_fetch_assoc($postsresult)){
                       $title = $row['title'];
                       $body = $row['body'];
@@ -152,10 +151,26 @@ session_start();
                       $postuserid = $row['userid'];
                       $postid = $row['id'];
 
+
+                      $empname_query = "select name FROM employee WHERE user_id = '$postuserid' limit 1";
+                      $empname_result = mysqli_query($con, $empname_query);
+                      $emp_name = "";
+                      if($empname_result){
+                        if($empname_result && mysqli_num_rows($empname_result) > 0){
+                          $empname_data = mysqli_fetch_assoc($empname_result);
+
+                          $emp_name = $empname_data['name'];
+                        }
+                      }
+
+
+
+
                       #REPLACE user id WITH EMPLOYEE NAME
                       $post .= "<div style='background: rgba(115, 115, 115, 0.1); padding: 0.5em; margin-left: 0em;'>
-                      <h4 style='text-align: left; border-bottom: solid; border-width: 1px; border-color: lightgrey;'>$title</h2>
-                      <h6>$date</h3>
+                      <h4 style='text-align: left; border-bottom: solid; border-width: 1px; border-color: lightgrey;'>$title</h4>
+                      <h5>$emp_name</h5>
+                      <h6>$date</h6>
                       <p style='font-size: 0.8em'>$body</p>
                       ";
 
