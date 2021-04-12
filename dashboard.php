@@ -164,10 +164,11 @@ session_start();
                          $post .= "
                          <form action='dashboard.php' method='POST'>
                          <input type=hidden name='postidinput' value='$postid' >
-                         <input type='submit' name='deletepost' value='delete'>
-                         </form>;
+                         <input type='submit' name='deletepost' value='delete'
+                         style='font-size: 0.5em; border: none; color: red; background-color: white;'>
+                         </form>
                          ";
-                       };
+                       }
                        $post .= "</div>";
                     }
                     echo $post;
