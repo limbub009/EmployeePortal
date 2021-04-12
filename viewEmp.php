@@ -1,6 +1,7 @@
 <!doctype html>
 <?php
 session_start();
+error_reporting(0);
 include("connections.php");
 include("functions.php");
 $user_data = check_login($con);
@@ -48,7 +49,15 @@ $user_data = check_login($con);
                     <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
                 <?php } ?>
 
-                <button class="btn btn-outline-success" type="submit"><a style="text-decoration: none; color: white;" href='createAccount.php'>Create Account</a></button>
+                <?php
+                if(!empty($user_data['role'])){
+                  if($user_data['role'] === "Administrator"){
+                ?>
+                  <button class="btn btn-outline-success" type="submit"><a style="text-decoration: none; color: white;" href='createAccount.php'>Create Account</a></button>
+                <?php
+                }
+                }
+                ?>
 
 
             </form>
