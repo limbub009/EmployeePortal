@@ -107,7 +107,7 @@ session_start();
                 <img src="./images/avatar2.jpg" height="90px" width="85px"/>
                 <ul>
                     <li>
-                        Username:
+                        Name:
                     </li>
                     <li>
                         Email:
