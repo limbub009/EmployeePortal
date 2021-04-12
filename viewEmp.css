@@ -2,7 +2,8 @@ body{
     margin-top: 7%;
 
     color: black;
-    background-color: #b8c1cf;
+    background: url(./images/viewEmpBg.jpg);
+    background-size: 100% 130%;
 
 
 }
@@ -12,7 +13,6 @@ nav{
 .main{
     margin-left: 20%;
     margin-right: 20%;
-    border-radius: 20px;
     padding-bottom: 8%;
     padding-top: 5%;
     background-color: white;
@@ -38,7 +38,6 @@ img{
     margin-left: 25%;
     margin-right:25%;
     margin-top: 2%;
-    border-radius: 1em;
     background-color: #b8c1cf;
     box-shadow: 0px 10px 30px;
     opacity: 0.8;
