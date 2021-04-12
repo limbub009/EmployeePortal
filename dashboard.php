@@ -172,8 +172,8 @@ session_start();
                       $post .= "<div style='background: rgba(115, 115, 115, 0.1); padding: 0.5em; margin-left: 0em;'>
                       <h4 style='text-align: left; border-bottom: solid; border-width: 1px; border-color: lightgrey;'>$title</h4>
                       <h5>$emp_name</h5>
-                      <h6>$date</h6>
-                      <p style='font-size: 0.8em'>$body</p>
+                      <h6 style='text-align: left; border-bottom: solid; border-width: 1px; border-color: lightgrey;'>$date</h6>
+                      <p style='overflow-y: scroll; word-break: break-word; font-size: 0.8em'>$body</p>
                       ";
 
 
@@ -197,14 +197,19 @@ session_start();
                 </article>
                   <button style="border: none; margin: 1em;" onclick="toggleHide('postfeedform')">Add Post</button>
 
-                    <form method="POST" action="#" id="postfeedform" style="display:none">
+                    <form method="POST" action="#" id="postfeedform" style="display:none; width: 100%;">
                         <p>Title</p>
-                        <input type="text" STYLE="color: black" name="title" placeholder="Title">
+                        <input type="text" name="title" placeholder="Title"
+                        STYLE="padding: 1em; color: black; text-align: left; border: none; border-width: 1px; background-color: lightgrey; width: 100%; height: 3em; font-size: 0.8em;">
 
                         <p>Body</p>
-                        <input type="text" STYLE="color: black" name="body" placeholder="Body">
+                        <textarea name="body" placeholder="Body"
+                        STYLE="overflow-y: scroll; word-break: break-word; padding: 1em;
+                        color: black; text-align: left; border: none;
+                        border-width: 1px; background-color: lightgrey;
+                        width: 100%; height: 10em; font-size: 0.8em;"></textarea>
                         <br>
-                        <input type="submit" name="submitpost" value="Post">
+                        <input style="border: none; margin: 1em;"type="submit" name="submitpost" value="Post">
                     </form>
 
             </div>
