@@ -1,9 +1,8 @@
 <?php
-  session_start();
+session_start();
   require_once('DB.php');
   include('connections.php');
   include('functions.php');
-
   $user_data = check_login($con);
 
   $db = new DB();
