@@ -3,7 +3,7 @@
 
   $db = new DB();
   $data = $db->viewData();
-
+  $user_data = check_login($con);
   // var_dump($data);
 ?>
 <!DOCTYPE html>
