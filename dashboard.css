@@ -18,13 +18,12 @@ ul{
   right: 2em;
 }
 
-#banner{
-}
+
 
 div{
     font-size: 25px;
     margin-left: 7.3%;
-    margin-top: 1.5%;
+
 }
 
 .dashboardbox:hover {
@@ -34,7 +33,7 @@ div{
 }
 
 .dashboardbox{
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 .dashboardbox h3{
