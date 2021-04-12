@@ -72,10 +72,20 @@ session_start();
                 <img src="./images/avatar2.jpg" height="90px" width="85px"/>
                 <ul>
                     <li>
-                        Name: <?php echo $empdata['name']; ?>
+                        Name:
+                        <?php
+                        if(isset($empdata['name'])){
+                        echo $empdata['name'];
+                        }
+                        ?>
                     </li>
                     <li>
-                        Email: <?php echo $empdata['email']; ?>
+                        Email:
+                        <?php
+                        if(isset($empdata['name'])){
+                        echo $empdata['email'];
+                        }
+                        ?>
                     </li>
                 </ul>
                 </div>

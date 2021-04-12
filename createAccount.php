@@ -4,6 +4,9 @@ session_start();
   include("connections.php");
   include("functions.php");
 
+  $user_data = check_login($con);
+  check_admin($con, $user_data);
+
   #CHECK IF USER CLICKED 'POST'
   if($_SERVER['REQUEST_METHOD'] == "POST"){
     #something was POSTed
