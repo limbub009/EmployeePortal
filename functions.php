@@ -42,6 +42,16 @@ function emp_data($con){
 }
 }
 
+function check_admin($con, $user_data){
+
+  if(!empty($user_data['role'])){
+    if($user_data['role'] != "Administrator"){
+      header("location: cover.php");
+    }
+  }
+  return;
+}
+
 
 #creates a random number for the user id
 function random_num($length){
