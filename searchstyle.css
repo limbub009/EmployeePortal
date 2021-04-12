@@ -87,11 +87,11 @@ h1::after {
   background: #ffffff;
 }
 
-ul li:hover {
+#dataViewer li:hover {
   background-color: white;
   color: black;
 }
 
-li {
+#dataViewer li {
   cursor: pointer;
 }
