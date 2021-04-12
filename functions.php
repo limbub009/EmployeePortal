@@ -60,6 +60,20 @@ function getId($username, $con){
 }
 
 
+function deletepost($pid){
+  $deletequery = "delete from feedpost where id = $pid";
+  $delete = mysqli_query($con,$deletequery); // delete query
+  if($delete){
+    mysqli_close($con);
+    header('location:dashboard.php');
+    exit;
+  }
+  else{
+    echo "Error deleting post";
+  }
+
+}
+
 ?>
 
 <script>
@@ -72,5 +86,6 @@ function toggleHide(input){
     myDiv.style.display = "none";
   }
 }
+
 
 </script>

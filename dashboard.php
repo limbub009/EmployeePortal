@@ -148,8 +148,9 @@ session_start();
 
                        if($_SESSION['id'] == $postuserid){
                          $post .= "
-                         <button style='font-size: 0.5em; border: none; color: red; background-color: white;'>
-                         <a href='delete.php'>Delete</a>
+                         <button style='font-size: 0.5em; border: none; color: red; background-color: white;'
+                         onclick='deletepost($postid)'>
+                         Delete
                          </button>
                          ";
                        };

@@ -1,7 +1,7 @@
 <?php
 include("connections.php");
 include("dashboard.php");
-echo $postid;
+//echo $postid;
 $deletequery = "delete from feedpost where id = $postid";
 $delete = mysqli_query($con,$deletequery); // delete query
 if($delete){
