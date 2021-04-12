@@ -30,3 +30,4 @@ function viewSearchResult(data) {
 
 function postSearchName(li) {
   window.location.href = 'viewEmp.php?searchname='+(li.innerHTML);
+}
