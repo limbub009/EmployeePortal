@@ -86,3 +86,12 @@ h1::after {
 #dataViewer:::-webkit-scrollbar-thumb {
   background: #ffffff;
 }
+
+ul li:hover {
+  background-color: white;
+  color: black;
+}
+
+li {
+  cursor: pointer;
+}
