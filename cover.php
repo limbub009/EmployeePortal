@@ -124,7 +124,7 @@ error_reporting(0);
   <!-- Wrap the rest of the page in another container to center all the content. -->
 
   <div class="container marketing">
-  <h1> PEOPLE YOU NEED TO LOOK OUT FOR UWU</h1>
+  <h1 style="padding-bottom: 2em; text-align: center;">FDM Investors</h1>
     <!-- Three columns of text below the carousel -->
     <div class="row">
       <div class="col-lg-4">
