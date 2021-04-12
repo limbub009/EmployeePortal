@@ -5,6 +5,7 @@ error_reporting(0);
 include("connections.php");
 include("functions.php");
 $user_data = check_login($con);
+$empdata = emp_data($con);
 ?>
 
 
@@ -29,36 +30,36 @@ $user_data = check_login($con);
         </div>
 
         <div class="image">
-            <?php if(isset($_GET['searchname'])) {
-            $userData = getUsersData($con, $_GET['searchname']);
-            ?>
+          <figure>
             <img src = empIcon.png>
+            <figcaption><h3>Your Profile</h3></figcaption>
+          </figure>
         </div>
         <div className="info">
             <div class="row topCard">
                 <div class="col-sm-6 top">
                     <p>Name</p>
-                    <h6><?php echo $userData['name']; ?></h6>
+                    <h6><?php echo $empdata['name']; ?></h6>
                 </div>
                 <div class="col-sm-6 top">
                     <p>Department</p>
-                    <h6><?php echo $userData['departmentid']; ?></h6>
+                    <h6><?php echo $empdata['departmentid']; ?></h6>
                 </div>
             </div>
             <div class="row bottomCard">
                 <div class="col-sm-6 bottom">
                     <p>Email</p>
-                    <h6><?php echo $userData['email']; ?></h6>
+                    <h6><?php echo $empdata['email']; ?></h6>
                 </div>
                 <div class="col-sm-6 bottom">
                     <p>Phone</p>
-                    <h6><?php echo $userData['phone']; ?></h6>
+                    <h6><?php echo $empdata['phone']; ?></h6>
+                </div>
+                <div>
+                  <a href="editprofile.php"><button> Edit Profile </button></a>
                 </div>
             </div>
         </div>
     </div>
-    <?php
-    }
-    ?>
   </div>
 </body>

@@ -17,7 +17,7 @@ include('connections.php');
         </li>
         <!-- ADD PHP TO MAKE IT VISIBLE ONLY WHEN USER IS LOGGED IN-->
         <li class="nav-item">
-          <a class="nav-link" href="dashboard.php">Your Profile</a>
+          <a class="nav-link" href="yourProfile.php">Your Profile</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="timetable.html">View Schedule</a>

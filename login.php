@@ -31,6 +31,8 @@ error_reporting(0);
             if($user_data['password'] === $password){
               #if user exists and password matches up, log in. start a session with the user id and redirect to dashboard.
               $_SESSION['id'] = $user_data['id']; #session id = user id (database primary key)
+              $empdata = emp_data($con);
+              $_SESSION['username'] = $empdata['name'];
               header("Location: dashboard.php");
               die;
             }
