@@ -1,3 +1,8 @@
+<?php
+session_start();
+include('connections.php');
+?>
+
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Employee Portal</a>
@@ -34,8 +39,16 @@
         <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
           <?php } ?>
 
-        <button class="btn btn-outline-success" type="submit"><a style="text-decoration: none; color: white;" href='createAccount.php'>Create Account</a></button>
 
+        <?php
+        if(!empty($user_data['role'])){
+          if($user_data['role'] === "Administrator"){
+        ?>
+          <button class="btn btn-outline-success" type="submit"><a style="text-decoration: none; color: white;" href='createAccount.php'>Create Account</a></button>
+        <?php
+        }
+        }
+        ?>
 
       </form>
     </div>
