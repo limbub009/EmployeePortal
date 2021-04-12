@@ -1,0 +1,54 @@
+body{
+    margin-top: 7%;
+    color: black;
+    background: url(./images/viewEmpBg.jpg);
+    background-size: 100% 130%;
+
+}
+nav{
+    margin-top: 20%;
+}
+
+.main{
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-bottom: 8%;
+    padding-top: 5%;
+    background-color: white;
+}
+img{
+
+    border: 1px solid #ddd;
+    border-radius: 80px;
+    padding: 5px;
+    height: 200px;
+    width: 230px;
+    margin-bottom: 15%;
+
+
+}
+.image{
+    text-align: center;
+    margin-left: 33%;
+    margin-right:33%;
+
+}
+.row{
+    margin-left: 25%;
+    margin-right:25%;
+    margin-top: 2%;
+    background-color: #b8c1cf;
+    box-shadow: 0px 10px 30px;
+    opacity: 0.8;
+
+}
+p{
+    font-size: 20px;
+    font-family: Serif;
+}
+h6{
+    //height: 10px;
+}
+.bottomCard{
+    margin-top: 2em;
+}

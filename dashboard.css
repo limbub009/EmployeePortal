@@ -1,28 +1,29 @@
+
+header{
+}
 body{
-  background: url(./images/background1.jpg);
+  background: url(./images/dashboard_office.jpg);
 }
 
 
-nav{
-    margin-top: -2%;
-}
+
 
 ul{
     list-style-type: none;
 }
-#linksnav ul{
-  padding-bottom: 1em;
-}
+
 
 .d-flex{
   position: absolute;
   right: 2em;
 }
 
+
+
 div{
     font-size: 25px;
     margin-left: 7.3%;
-    margin-top: 1.5%;
+
 }
 
 .dashboardbox:hover {
@@ -32,7 +33,7 @@ div{
 }
 
 .dashboardbox{
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 .dashboardbox h3{
@@ -58,18 +59,23 @@ div{
     margin-top: -10%;
 }
 
+#postfeedform{
+    display: none;
+}
+
 .tasks{
     padding: 30px;
     width: 37.5%;
     height: 400px;
     margin-left: 1%;
+
 }
 
 .deptInfo{
     padding: 30px;
     width: 50%;
     height: 20%;
-    margin-top: 0.25%;
+    margin-top: 0.75%;
     margin-left: 1%;
 }
 
