@@ -15,6 +15,8 @@ session_start();
     #collect userdata from post variable
     $title = $_POST['title'];
     $body = $_POST['body'];
+    $body = str_replace("'","\'",$body);
+    $body = str_replace('"', '\"',$body);
     $userid = $_SESSION['id'];  #sets userid of the post to the session id, which is set to the user's id when they log in, to identify the owner of the post
 
     if(!empty($title) && !empty($body))
