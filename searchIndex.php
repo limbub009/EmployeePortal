@@ -1,9 +1,12 @@
 <?php
   require_once('DB.php');
+  include('connections.php');
+  include('functions.php');
+  //$user_data = check_login($con);
 
   $db = new DB();
   $data = $db->viewData();
-  $user_data = check_login($con);
+
   // var_dump($data);
 ?>
 <!DOCTYPE html>
