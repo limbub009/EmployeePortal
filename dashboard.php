@@ -10,7 +10,7 @@ session_start();
   $user_data = check_login($con);
 
   #CHECK IF USER CLICKED 'POST' SUBMIT BUTTON
-  if($_SERVER['REQUEST_METHOD'] == "POST"){
+  if(isset($_POST['submitpost'])){
     #something was POSTed
     #collect userdata from post variable
     $title = $_POST['title'];
@@ -28,6 +28,20 @@ session_start();
     }
     else{
       echo "Please fill in all the fields";
+    }
+  }
+
+  if(isset($_POST['deletepost'])){
+    $id_to_delete = $_POST['postidinput'];
+    $deletequery = "delete from feedpost where id = $id_to_delete";
+    $delete = mysqli_query($con,$deletequery); // delete query
+    if($delete){
+      mysqli_close($con);
+      header('location:dashboard.php');
+      exit;
+    }
+    else{
+      echo "Error deleting post";
     }
   }
 
@@ -148,10 +162,10 @@ session_start();
 
                        if($_SESSION['id'] == $postuserid){
                          $post .= "
-                         <button style='font-size: 0.5em; border: none; color: red; background-color: white;'
-                         onclick='deletepost($postid)'>
-                         Delete
-                         </button>
+                         <form action='dashboard.php' method='POST'>
+                         <input type=hidden name='postidinput' value='$postid' >
+                         <input type='submit' name='deletepost' value='delete'>
+                         </form>;
                          ";
                        };
                        $post .= "</div>";
@@ -172,7 +186,7 @@ session_start();
                         <p>Body</p>
                         <input type="text" STYLE="color: black" name="body" placeholder="Body">
                         <br>
-                        <input type="submit" name="" value="Post">
+                        <input type="submit" name="submitpost" value="Post">
                     </form>
 
             </div>
