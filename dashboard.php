@@ -10,11 +10,13 @@ session_start();
   $user_data = check_login($con);
 
   #CHECK IF USER CLICKED 'POST' SUBMIT BUTTON
-  if($_SERVER['REQUEST_METHOD'] == "POST"){
+  if(isset($_POST['submitpost'])){
     #something was POSTed
     #collect userdata from post variable
     $title = $_POST['title'];
     $body = $_POST['body'];
+    $body = str_replace("'","\'",$body);
+    $body = str_replace('"', '\"',$body);
     $userid = $_SESSION['id'];  #sets userid of the post to the session id, which is set to the user's id when they log in, to identify the owner of the post
 
     if(!empty($title) && !empty($body))
@@ -31,6 +33,22 @@ session_start();
     }
   }
 
+  if(isset($_POST['deletepost'])){
+    $id_to_delete = $_POST['postidinput'];
+    $deletequery = "delete from feedpost where id = $id_to_delete";
+    $delete = mysqli_query($con,$deletequery); // delete query
+    if($delete){
+      mysqli_close($con);
+      header('location:dashboard.php');
+      exit;
+    }
+    else{
+      echo "Error deleting post";
+    }
+  }
+
+  $empdata = emp_data($con);
+
 ?>
 <html>
 <head>
@@ -40,43 +58,51 @@ session_start();
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <header>
+    <nav id="banner" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-          <a class="navbar-brand" href="#">Employee Portal</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div id="linksnav" class="collapse navbar-collapse" id="navbarCollapse">
-              <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                  <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  <!-- ADD PHP TO MAKE IT VISIBLE ONLY WHEN USER IS LOGGED IN-->
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Your Profile</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">View Schedule</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#">Search Employee</a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                  </li> -->
-                  <!-- <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                  </li> -->
-              </ul>
-              <form class="d-flex">
-                  <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-                  <button class="btn btn-outline-success" type="submit" style="margin-right: 10%;">LogIn</button>
-                  <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
-                  <button class="btn btn-outline-success" type="submit">SignIn</button>
-              </form>
-          </div>
+        <a class="navbar-brand" href="#">Employee Portal</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="cover.php">Home</a>
+            </li>
+            <!-- ADD PHP TO MAKE IT VISIBLE ONLY WHEN USER IS LOGGED IN-->
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.php">Your Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">View Schedule</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Search Employee</a>
+            </li>
+
+          </ul>
+          <form class="d-flex">
+            <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
+
+            
+            <?php if(!isset($_SESSION['id']) || empty($_SESSION['id'])){ ?>
+            <button id="logoutbutton" class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='login.php' style="text-decoration: none; color: white;">LogIn</a></button>
+
+            <?php } else { ?>
+
+            <button id="loginbutton" class="btn btn-outline-success" type="submit" style="margin-right: 7%;"><a href='logout.php' style="text-decoration: none; color: white;">LogOut</a></button>
+          <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
+            <?php } ?>
+
+
+            <!-- we can do a signIn forum fro admin's eyes only !!! ADD PHP SCRIPT HERE FOR SIGNIN BUTTON!!!-->
+            <button class="btn btn-outline-success" type="submit"><a style="text-decoration: none; color: white;" href='createAccount.php'>Create Account</a></button>
+          </form>
+        </div>
       </div>
-  </nav>
+    </nav>
+  </header>
 
 
 
@@ -88,10 +114,10 @@ session_start();
                 <img src="./images/avatar2.jpg" height="90px" width="85px"/>
                 <ul>
                     <li>
-                        Username:
+                        Name: <?php echo $empdata['name']; ?>
                     </li>
                     <li>
-                        Email:
+                        Email: <?php echo $empdata['email']; ?>
                     </li>
                 </ul>
                 </div>
@@ -115,21 +141,84 @@ session_start();
             </div>
         </div>
         <div class = "row row2">
-            <div class="col-sm-6 feed dashboardbox">
-                <h3>Feed</h3>
-                <p>lorem ipsum</p>
-                  <button onclick="toggleHide('postfeedform')">Add Post</button>
-                  <div id="postfeedform">
-                    <form method="POST" action="#">
+            <div id="feed" class="col-sm-6 feed dashboardbox" style="overflow-y: scroll; padding-top: 0em;">
+                <h3 style="position: sticky; top: 0; padding: 2em; background-color: white; margin-top: 0em; padding: 1em;">Feed</h3>
+                <article id="postcontainer">
+
+                  <?php
+                  $postsquery = "SELECT * FROM feedpost ORDER BY date DESC";
+                  $postsresult = mysqli_query($con, $postsquery);
+                  $numposts = mysqli_num_rows($postsresult);
+                  $post = "";
+
+
+                  if($numposts > 0){
+                    while($row = mysqli_fetch_assoc($postsresult)){
+                      $title = $row['title'];
+                      $body = $row['body'];
+                      $date = $row['date'];
+                      $postuserid = $row['userid'];
+                      $postid = $row['id'];
+
+
+                      $empname_query = "select name FROM employee WHERE user_id = '$postuserid' limit 1";
+                      $empname_result = mysqli_query($con, $empname_query);
+                      $emp_name = "";
+                      if($empname_result){
+                        if($empname_result && mysqli_num_rows($empname_result) > 0){
+                          $empname_data = mysqli_fetch_assoc($empname_result);
+
+                          $emp_name = $empname_data['name'];
+                        }
+                      }
+
+
+
+
+                      #REPLACE user id WITH EMPLOYEE NAME
+                      $post .= "<div style='margin: 1%; background: rgba(115, 115, 115, 0.1); padding: 0.5em; margin-left: 0em;'>
+                      <h4 style='text-align: left; border-bottom: solid; border-width: 1px; border-color: lightgrey;'>$title</h4>
+                      <h5>$emp_name</h5>
+                      <h6 style='text-align: left; border-bottom: solid; border-width: 1px; border-color: lightgrey;'>$date</h6>
+                      <p style='overflow-y: scroll; word-break: break-word; font-size: 0.8em'>$body</p>
+                      ";
+
+
+                       if($_SESSION['id'] == $postuserid){
+                         $post .= "
+                         <form action='dashboard.php' method='POST'>
+                         <input type=hidden name='postidinput' value='$postid' >
+                         <input type='submit' name='deletepost' value='delete'
+                         style='font-size: 0.5em; border: none; color: red; background-color: white;'>
+                         </form>
+                         ";
+                       }
+                       $post .= "</div>";
+                    }
+                    echo $post;
+                  } else{
+                    echo "No posts";
+                  }
+                  ?>
+
+                </article>
+                  <button style="border: none; margin: 1em; font-size: 0.5em;" onclick="toggleHide('postfeedform')">Add Post</button>
+
+                    <form method="POST" action="#" id="postfeedform" style="display:none; width: 100%;">
                         <p>Title</p>
-                        <input type="text" STYLE="color: black" name="title" placeholder="Title">
+                        <input type="text" name="title" placeholder="Title"
+                        STYLE="padding: 1em; color: black; text-align: left; border: none; border-width: 1px; background-color: lightgrey; width: 100%; height: 3em; font-size: 0.8em;">
 
                         <p>Body</p>
-                        <input type="text" STYLE="color: black" name="body" placeholder="Body">
+                        <textarea name="body" placeholder="Body"
+                        STYLE="overflow-y: scroll; word-break: break-word; padding: 1em;
+                        color: black; text-align: left; border: none;
+                        border-width: 1px; background-color: lightgrey;
+                        width: 100%; height: 10em; font-size: 0.8em;"></textarea>
                         <br>
-                        <input type="submit" name="" value="Post">
+                        <input style="font-size: 0.5em;border: none; margin: 1em;"type="submit" name="submitpost" value="Post">
                     </form>
-                </div>
+
             </div>
             <div class="col-sm-4 deptInfo dashboardbox">
                 <h3>Department Information</h3>

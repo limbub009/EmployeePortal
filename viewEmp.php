@@ -22,7 +22,6 @@ include("functions.php");
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
-                    <!-- ADD PHP TO MAKE IT VISIBLE ONLY WHEN USER IS LOGGED IN-->
                     <li class="nav-item">
                         <a class="nav-link" href="#">Your Profile</a>
                     </li>
@@ -42,43 +41,37 @@ include("functions.php");
             </div>
         </div>
     </nav>
-    <?php
-    if(!isset($_SESSION['searchName']))
-    {
-    ?>
     <div class="main">
         <div class="image">
-            <?php if(isset($_SESSION['searchName'])) {
-            $userData = getUserData(getID($_SESSION['searchName']))
+            <?php if(isset($_GET['searchname'])) {
+            $userData = getUsersData($con, $_GET['searchname']);
             ?>
             <img src = empIcon.png>
-            <h6><?php echo $userData['name']; ?></h6>
         </div>
         <div className="info">
             <div class="row topCard">
                 <div class="col-sm-6 top">
-                    <p>Email</p>
-                    <h6><?php echo $userData['email']; ?></h6>
+                    <p>Name</p>
+                    <h6><?php echo $userData['name']; ?></h6>
                 </div>
                 <div class="col-sm-6 top">
-                    <p>Phone</p>
-                    <h6><?php echo $userData['phone']; ?></h6>
+                    <p>Department</p>
+                    <h6><?php echo $userData['departmentid']; ?></h6>
                 </div>
             </div>
             <div class="row bottomCard">
                 <div class="col-sm-6 bottom">
-                    <p>Department</p>
-                    <h6><?php echo $userData['departmentid']; ?></h6>
+                    <p>Email</p>
+                    <h6><?php echo $userData['email']; ?></h6>
                 </div>
                 <div class="col-sm-6 bottom">
-                    <p>Job Role</p>
-                    <h6><?php echo $userData['departmentid']; ?></h6>
+                    <p>Phone</p>
+                    <h6><?php echo $userData['phone']; ?></h6>
                 </div>
             </div>
         </div>
     </div>
     <?php
-    }
     }
     ?>
 </body>

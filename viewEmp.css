@@ -43,11 +43,13 @@ img{
     box-shadow: 0px 10px 30px;
     opacity: 0.8;
 
-
 }
 p{
     font-size: 20px;
     font-family: Serif;
+}
+h6{
+    //height: 10px;
 }
 .bottomCard{
     margin-top: 2em;
