@@ -25,6 +25,9 @@ include('connections.php');
         <li class="nav-item">
           <a class="nav-link" href="searchIndex.php">Search Employee</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard.php">Dashboard</a>
+        </li>
 
       </ul>
       <form class="d-flex">

@@ -5,13 +5,77 @@ body {
   align-items: center;
   flex-direction: column;
   font-family: "Raleway", sans-serif;
-  background: #dedcdc;
+  background: url(./images/office.jpeg);
+}
+
+#editbox{
+  position: absolute;
+  width: 1000px;
+  height: 1000px;
+  color: #fff;
+  background: rgba(27, 32, 41, 0.7);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px;
+}
+
+
+#editbox p{
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+#editbox input{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#editbox input[type="text"], input[type="email"], input[type="int"]{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  font-size: 16px;
+}
+
+input{
+  max-width: 50%;
+  color: white;
+}
+
+#editbox input[type="submit"]{
+  margin-top: 10px;
+  border: none;
+  outline: none;
+  height: 40px;
+  background: rgb(105, 136, 194);
+  color: #fff;
+  font-size: 18px;
+  max-width: 30%;
+}
+
+#editbox input[type="submit"]:hover{
+  cursor: pointer;
+  background: rgb(105, 136, 194);
+  color: #fff;
+
+}
+
+a{
+  color: darkgrey;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 20px;
 }
 
 h1 {
   text-align: center;
   font-family: sans-serif;
-  color: black;
+  color: white;
   font-size: 50px;
   margin-top: 33px;
   padding: 24px;
@@ -41,23 +105,4 @@ div {
 form {
   font-family: "Raleway", sans-serif;
   font-size: 20px;
-}
-
-input {
-  max-width: 350px;
-  width: 350px;
-  height: 50px;
-  margin-bottom: 50px;
-  font-size: 20px;
-  font-family: "Raleway", sans-serif;
-  background-color: white;
-  color:black;
-}
-
-
-input[type= submit] {
-  height: 50px;
-  width: 120px;
-  color: black;
-
 }
