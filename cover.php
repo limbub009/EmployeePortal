@@ -16,6 +16,8 @@
 
     <!-- Bootstrap core CSS -->
 <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="assets\dist\js\bootstrap.bundle.min.js"></script>
+
 
     <style>
       .bd-placeholder-img {
@@ -252,10 +254,6 @@
     <p>&copy; 2021-2027 BKRS, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
 </main>
-
-
-    <script src="C:\Users\saaks\Documents\GitHub\EmployeePortal\assets\dist\js\bootstrap.bundle.min.js"></script>
-
 
   </body>
 </html>
