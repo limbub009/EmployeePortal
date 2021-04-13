@@ -52,7 +52,11 @@ input{
   border: none;
   outline: none;
   height: 40px;
-  background: rgb(105, 136, 194);
+  background: transparent;
+  border-top: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: grey;
   color: #fff;
   font-size: 18px;
   max-width: 30%;
