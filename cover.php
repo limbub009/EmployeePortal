@@ -161,10 +161,6 @@ error_reporting(0);
     <p id="footer" style="padding-top: 5%;">&copy; 2021-2027 BKRS, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
   </footer>
 </main>
-
-
-    <script src="C:\Users\saaks\Documents\GitHub\EmployeePortal\assets\dist\js\bootstrap.bundle.min.js"></script>
-
-
+    <script src="assets\dist\js\bootstrap.bundle.min.js"></script>
   </body>
 </html>
