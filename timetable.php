@@ -1,3 +1,13 @@
+<?php
+session_start();
+error_reporting(0);
+include("connections.php");
+include("functions.php");
+
+
+$user_data = check_login($con);
+?>
+
 <HTML>
   <head>
     <link rel="stylesheet" href="timetable.css">
