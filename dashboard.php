@@ -96,16 +96,16 @@ error_reporting(0);
                 <h3>Tasks</h3>
                 <ul>
                     <li>
-                        hkasklsa
+                        Task 1
                     </li>
                     <li>
-                        nas;jvs;a
+                        Task 2
                     </li>
                     <li>
-                        ck as;vsa
+                        Task 3
                     </li>
                     <li>
-                        lkjsv ;as
+                        Task 4
                     </li>
                 </ul>
             </div>
