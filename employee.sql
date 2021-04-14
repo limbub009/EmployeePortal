@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2021 at 05:59 PM
+-- Generation Time: Apr 14, 2021 at 02:28 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -40,9 +40,14 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`user_id`, `name`, `email`, `phone`, `departmentid`) VALUES
-(1042, '', '', 0, 0),
-(1043, '', '', 0, 0),
-(1047, '', '', 0, 0);
+(1003, 'Simon Simons', 'Admin@FDM.com', 200000, 1),
+(1042, 'John Smith', 'js@FDM.com', 70000000, 1),
+(1043, 'Johnny Depp', 'Jd@FDM.com', 7000909, 0),
+(1047, 'Adam Greenhill', 'ag@FDM.com', 5946704, 12),
+(1048, 'Sarah Holmes', 'SH@FDM.com', 2456722, 13),
+(1049, 'Mary Connors', 'MC@FDM.com', 703456, 11),
+(1050, 'Maya Cannon', 'MC1@FDM.com', 234566, 13),
+(1051, 'Manny', 'm@fdm.com', 701234, 12);
 
 --
 -- Indexes for dumped tables

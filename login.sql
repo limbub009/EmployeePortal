@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2021 at 05:59 PM
+-- Generation Time: Apr 14, 2021 at 02:28 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -43,8 +43,11 @@ INSERT INTO `login` (`id`, `username`, `password`, `date`, `role`) VALUES
 (1003, 'administrator', 'password', '2021-03-24 20:34:28', 'Administrator'),
 (1042, 'consultant', 'pass', '2021-04-07 15:54:59', 'Consultant'),
 (1043, 'manager', 'pass', '2021-04-07 15:55:13', 'Manager'),
-(1046, 'support', 'pass', '2021-04-07 15:56:58', 'SupportStaff'),
-(1047, 'hradmin', 'pass', '2021-04-07 15:57:19', 'HRAdministrator');
+(1047, 'hradmin', 'pass', '2021-04-07 15:57:19', 'HRAdministrator'),
+(1048, 'consultant1', 'password', '2021-04-07 21:25:40', 'Consultant'),
+(1049, 'bob', 'pass', '2021-04-08 09:34:18', 'Consultant'),
+(1050, 'cons6', 'pass', '2021-04-08 09:35:04', 'Consultant'),
+(1051, 'man1', 'pass', '2021-04-13 23:57:17', 'Manager');
 
 --
 -- Indexes for dumped tables
@@ -66,7 +69,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1048;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1052;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

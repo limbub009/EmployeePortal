@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2021 at 05:59 PM
+-- Generation Time: Apr 14, 2021 at 02:28 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -36,6 +36,16 @@ CREATE TABLE `feedpost` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `feedpost`
+--
+
+INSERT INTO `feedpost` (`id`, `userid`, `title`, `body`, `date`) VALUES
+(118, 1042, 'Greetings', 'I am a new consultant in this department. ', '2021-04-12 15:24:08'),
+(125, 1042, 'Wednesday meeting', 'Hi everyone, I just wanted to confirm if the meeting on Wednesday is still happening? Thanks', '2021-04-12 15:37:56'),
+(138, 1043, 'Welcome', 'I\'m Johnny, the department manager.', '2021-04-12 16:01:43'),
+(144, 1003, 'Moderation', 'Good evening, \r\n\r\nThe administrator can delete any posts. Please use the feed appropriately.', '2021-04-14 00:06:59');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -55,7 +65,7 @@ ALTER TABLE `feedpost`
 -- AUTO_INCREMENT for table `feedpost`
 --
 ALTER TABLE `feedpost`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
