@@ -153,8 +153,8 @@ error_reporting(0);
                       <p style='overflow-y: scroll; word-break: break-word; font-size: 0.8em'>$body</p>
                       ";
 
-
-                       if($_SESSION['id'] == $postuserid){
+                    
+                       if($_SESSION['id'] == $postuserid || $user_data['role'] === "Administrator"){
                          $post .= "
                          <form action='dashboard.php' method='POST'>
                          <input type=hidden name='postidinput' value='$postid' >
