@@ -16,7 +16,7 @@ function check_login($con){
   }
   else{
   #elseredirect to login
-  header("location: cover.php");
+  header("location: login.php");
   die; #stop the code here
 }
 }
