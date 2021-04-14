@@ -18,7 +18,7 @@ error_reporting(0);
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Live Search</title>
+  <title>Search</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link rel="stylesheet" href="searchstyle.css">
 
@@ -33,7 +33,7 @@ error_reporting(0);
     <?php include('navbar.php'); ?>
   </header>
 
-  <h1>Live Search</h1>
+  <h1>Search</h1>
 
   <form action="search.php" method="POST">
     <input type="text" name="name" placeholder="Search Here..."
